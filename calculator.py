@@ -5,12 +5,12 @@ class Calculator:
     def __init__(self, root):
         self.root = root
         self.root.title("Miniräknare")
-        self.root.geometry("300x400")
+        self.root.geometry("400x500")
 
         self.expression = ""
 
         # Display
-        self.display = tk.Entry(root, font=("Arial", 20), justify="right")
+        self.display = tk.Entry(root, font=("Arial", 28), justify="right")
         self.display.grid(row=0, column=0, columnspan=4, padx=10, pady=10, sticky="nsew")
 
         # Buttons
@@ -24,15 +24,15 @@ class Calculator:
         row = 1
         col = 0
         for button in buttons:
-            tk.Button(root, text=button, font=("Arial", 18), bg='yellow', command=lambda b=button: self.on_button_click(b)).grid(row=row, column=col, padx=5, pady=5, sticky="nsew")
+            tk.Button(root, text=button, font=("Arial", 24), bg='yellow', width=5, height=2, command=lambda b=button: self.on_button_click(b)).grid(row=row, column=col, padx=5, pady=5, sticky="nsew")
             col += 1
             if col > 3:
                 col = 0
                 row += 1
 
         # Clear button
-        tk.Button(root, text="C", font=("Arial", 18), bg='yellow', command=self.clear).grid(row=row, column=0, columnspan=2, padx=5, pady=5, sticky="nsew")
-        tk.Button(root, text="←", font=("Arial", 18), bg='yellow', command=self.backspace).grid(row=row, column=2, columnspan=2, padx=5, pady=5, sticky="nsew")
+        tk.Button(root, text="C", font=("Arial", 24), bg='yellow', width=5, height=2, command=self.clear).grid(row=row, column=0, columnspan=2, padx=5, pady=5, sticky="nsew")
+        tk.Button(root, text="←", font=("Arial", 24), bg='yellow', width=5, height=2, command=self.backspace).grid(row=row, column=2, columnspan=2, padx=5, pady=5, sticky="nsew")
 
         # Configure grid weights
         for i in range(6):
