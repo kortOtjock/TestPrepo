@@ -24,15 +24,15 @@ class Calculator:
         row = 1
         col = 0
         for button in buttons:
-            tk.Button(root, text=button, font=("Arial", 18), command=lambda b=button: self.on_button_click(b)).grid(row=row, column=col, padx=5, pady=5, sticky="nsew")
+            tk.Button(root, text=button, font=("Arial", 18), bg='yellow', command=lambda b=button: self.on_button_click(b)).grid(row=row, column=col, padx=5, pady=5, sticky="nsew")
             col += 1
             if col > 3:
                 col = 0
                 row += 1
 
         # Clear button
-        tk.Button(root, text="C", font=("Arial", 18), command=self.clear).grid(row=row, column=0, columnspan=2, padx=5, pady=5, sticky="nsew")
-        tk.Button(root, text="←", font=("Arial", 18), command=self.backspace).grid(row=row, column=2, columnspan=2, padx=5, pady=5, sticky="nsew")
+        tk.Button(root, text="C", font=("Arial", 18), bg='yellow', command=self.clear).grid(row=row, column=0, columnspan=2, padx=5, pady=5, sticky="nsew")
+        tk.Button(root, text="←", font=("Arial", 18), bg='yellow', command=self.backspace).grid(row=row, column=2, columnspan=2, padx=5, pady=5, sticky="nsew")
 
         # Configure grid weights
         for i in range(6):
